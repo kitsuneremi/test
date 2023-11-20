@@ -5,6 +5,9 @@ const nextConfig = {
             {
                 hostname: 'themes-themegoods.b-cdn.net',
                 protocol: 'https',
+            }, {
+                hostname: 'live.staticflickr.com',
+                protocol: 'https',
             }
         ]
     }
