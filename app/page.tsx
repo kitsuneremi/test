@@ -7,19 +7,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useIsClient } from 'usehooks-ts';
 import { IoIosSearch } from "react-icons/io";
 import { CiCalendar } from "react-icons/ci";
-import { FaUpDown } from "react-icons/fa6";
-import { FaChevronDown } from "react-icons/fa";
-import { FaChevronUp } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp, FaChevronRight, FaFacebookF } from "react-icons/fa";
 import Rating from '@mui/material/Rating';
-import { FaRegClock } from "react-icons/fa6";
-import { FaChevronRight } from "react-icons/fa";
 import { IoPhonePortraitOutline } from "react-icons/io5";
-import { FaFacebookF } from "react-icons/fa";
 import Link from 'next/link'
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaInstagram, FaPinterest, FaRegClock, FaUpDown } from "react-icons/fa6";
 import { TfiYoutube } from "react-icons/tfi";
-import { FaInstagram } from "react-icons/fa6";
-import { FaPinterest } from "react-icons/fa6";
 import Navbar from '@/components/navbar'
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { loading: () => <div className={cx('video-background')}></div>, ssr: false })
 const cx = classNames.bind(styles)
@@ -64,7 +57,7 @@ export default function Home() {
 		<>
 			{/* 0 hidden 1 background white 2 background transparent */}
 			{show != 0 && <Navbar bgColor={show == 1} />}
-			
+
 			<main className={cx('main')} ref={testRef}>
 				<div className={cx('header-box')}>
 					<div className={`${cx('background-overlay')}`} id='bg'>
