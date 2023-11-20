@@ -1,6 +1,7 @@
 .main {
-    height: fit-content;
+    height: 100vh;
     width: 100%;
+    overflow-y: scroll;
     position: absolute;
     top: 0;
     left: 0;
@@ -10,7 +11,7 @@
         justify-content: center;
         flex-direction: column;
 
-        .background {
+        .background-overlay {
             width: 100%;
             height: 800px;
             position: relative;
@@ -22,27 +23,39 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            
+            .video-background {
+                position: absolute;
+                top: -60px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -10;
+            }
 
             .text-title {
                 font-size: 40px;
                 line-height: 40px;
                 font-weight: 800;
+                color: white;
             }
             .text-sub-title {
                 font-size: 14px;
                 line-height: 14px;
+                color: white;
             }
             .first {
                 justify-content: space-between;
             }
             .second {
-                justify-self: flex-start;
+                justify-content: space-between;
             }
             .input-wrapper {
                 display: flex;
                 width: 100%;
                 gap: 10px;
-                @media screen and (max-width: 768px) {
+                @media screen and (width < 768px) {
                     display: flex;
                     flex-direction: column;
                 }
@@ -53,26 +66,32 @@
                     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
                     border-radius: 8px;
                     padding: 12px;
-                    @media screen and (max-width: 768px) {
+                    background-color: white;
+                    @media screen and (width < 768px) {
                         width: 100%;
                     }
                     input {
                         width: 100%;
                         outline: none;
                         border: none;
+                        background: transparent;
                     }
 
                     select {
                         width: 100%;
                         outline: none;
                         border: none;
-                        -webkit-appearance: none; /* Safari và Chrome */
-                        -moz-appearance: none; /* Firefox */
-                        appearance: none; /* Đối với các trình duyệt khác */
-                        background-image: none; /* Loại bỏ ảnh nền mặc định của dấu mũi tên */
-                        background-position: right center; /* Đặt vị trí ẩn của hình ảnh nền (nếu có) */
-                        background-repeat: no-repeat; /* Không lặp lại ảnh nền */
-                        padding-right: 1em; /* Tăng độ rộng của phần chọn */
+                        background: transparent;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        background-image: none;
+                        background-position: right center;
+                        background-repeat: no-repeat;
+                        padding-right: 1em;
+                        option{
+                            background: transparent;
+                        }
                     }
                 }
 
@@ -85,7 +104,7 @@
                     border-radius: 8px;
                     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
                     font-weight: 700;
-                    @media screen and (max-width: 768px) {
+                    @media screen and (width < 768px) {
                         width: 100%;
                     }
                     :hover {
@@ -102,6 +121,7 @@
                     gap: 10px;
                     align-items: center;
                     cursor: pointer;
+                    color: white;
                 }
             }
         }
@@ -132,7 +152,7 @@
                 height: 320px;
                 margin: 0 5%;
                 width: 90%;
-                @media screen and (max-width: 768px) {
+                @media screen and (width < 768px) {
                     flex-direction: column;
                     gap: 25px;
                     height: fit-content;
@@ -148,11 +168,11 @@
                         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
                     }
 
-                    @media screen and (max-width: 768px) {
+                    @media screen and (width < 768px) {
                         width: 100%;
                     }
 
-                    @media screen and (min-width: 960px) {
+                    @media screen and (width >= 960px) {
                         height: 300px;
                     }
 
@@ -407,6 +427,112 @@
                             align-items: center;
                             &:hover {
                                 color: black;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer {
+                margin: 40px 0 0;
+                padding: 30px 10px;
+                background-color: black;
+                color: white;
+                justify-content: space-between;
+
+                display: flex;
+                @media screen and (width < 768px) {
+                    flex-direction: column;
+                    gap: 25px;
+                }
+
+                .footer-award {
+                    width: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    @media screen and (width < 768px) {
+                        width: 100%;
+                    }
+                    .footer-award-title {
+                        font-weight: 800;
+                        font-size: 18px;
+                    }
+                    .footer-reward-image-wrapper {
+                        position: relative;
+                        width: 100%;
+                        aspect-ratio: 21 / 9;
+                    }
+                }
+
+                .footer-contact {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    width: 30%;
+                    @media screen and (width < 768px) {
+                        width: 100%;
+                    }
+                    .footer-contact-title {
+                        font-weight: 800;
+                        font-size: 18px;
+                    }
+                    .footer-contact-infomation {
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                    }
+
+                    .footer-contact-social-wrapper {
+                        padding: 12px;
+                        display: flex;
+                        gap: 10px;
+                        justify-content: center;
+                        .footer-contact-social-icon {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 9999px;
+                            padding: 10px;
+                            color: white;
+                        }
+
+                        .facebook {
+                            background-color: #2d5f9a;
+                        }
+
+                        .twitter {
+                            background-color: #00c3f3;
+                        }
+                        .youtube {
+                            background-color: #cc181e;
+                        }
+                        .pinterest {
+                            background-color: #bd081c;
+                        }
+
+                        .instagram {
+                            background-color: #405de6;
+                        }
+                    }
+                }
+                .footer-recent-trips-wrapper {
+                    display: grid;
+                    width: 30%;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    gap: 10px;
+                    @media screen and (width < 768px) {
+                        width: 100%;
+                    }
+                    a {
+                        height: fit-content;
+                        .footer-recent-trips-item {
+                            position: relative;
+                            width: 100%;
+                            aspect-ratio: 1/1;
+                            img {
+                                border-radius: 8px;
                             }
                         }
                     }

@@ -1,15 +1,15 @@
 .nav {
     position: fixed;
     width: 100%;
-    background-color: cyan;
     top: 0;
     left: 0;
-    color: aliceblue;
+    background: transparent;
     z-index: 30;
     padding: 10px 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
     .logo-container {
         display: flex;
@@ -29,7 +29,6 @@
     gap: 10px;
     align-items: center;
     cursor: pointer;
-    color: white;
 }
 
 .cart-box{
@@ -55,6 +54,107 @@
     height: 100vh;
     background-color: white;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 3%;
+    gap: 40px;
+
+    .exit-button-wrapper{
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        button{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+            font-size: 24px;
+            border-radius: 9999px;
+            background: transparent;
+            border: none;
+            color: white;
+            background-color: red;
+        }
+    }
+    .navigation-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .navigation{
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            color: black;
+
+            &:hover{
+                color: red;
+            }
+        }
+    }
+
+    .suggest-trip-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .suggest-trip-item{
+            position: relative;
+            width: 100%;
+            aspect-ratio: 265/220;
+            img{
+                border-radius: 8px;
+            }
+
+            .sale-bubble {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                padding: 12px 8px;
+                font-size: 12px;
+                font-weight: 800;
+                background-color: aqua;
+                color: white;
+                border-radius: 9999px;
+            }
+
+            .price-tag {
+                position: absolute;
+                left: 0;
+                bottom: 50%;
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+                display: flex;
+                gap: 5px;
+                background-color: red;
+                color: white;
+                padding: 8px 12px;
+                align-items: center;
+                .old-price {
+                    text-decoration: line-through;
+                    font-size: 14px;
+                }
+
+                .current-price {
+                    font-weight: 800;
+                }
+            }
+
+            .atributte{
+                position: absolute;
+                left: 0;
+                bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 10px;
+                .title{
+                    font-size: 14px;
+                    font-weight: 800;
+                    color: white;
+                }
+            }
+        }
+    }
 }
 
 .right-hand-menu-bar{
