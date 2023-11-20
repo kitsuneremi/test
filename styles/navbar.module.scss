@@ -1,0 +1,77 @@
+.nav {
+    position: fixed;
+    width: 100%;
+    background-color: cyan;
+    top: 0;
+    left: 0;
+    color: aliceblue;
+    z-index: 30;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .logo-container {
+        display: flex;
+        font-size: 2rem;
+    }
+
+    .list-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.menu-dropdown-trigger{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.cart-box{
+    position: relative;
+    .cart-count{
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 5px;
+        border-radius: 9999px;
+        font-size: x-small;
+    }
+}
+
+.side-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.right-hand-menu-bar{
+    position: absolute;
+    top: 30vh;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    color: black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    .menu-item{
+        padding: 5px 10px;
+    }
+}
